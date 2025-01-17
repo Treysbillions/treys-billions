@@ -360,6 +360,93 @@ ul.list {
     font-size: 16px;
     color: #000;
 }
+/* Section Contact */
+#contact {
+    padding: 80px 20px; /* Augmenter le padding autour de la section */
+    background-color: #f5f5dc; /* Couleur de fond pour la section */
+    text-align: center;
+    margin-top: 50px; /* Ajouter de l'espace avant la section */
+}
+
+/* Titres dans la section Contact */
+#contact h2 {
+    font-size: 36px; /* Augmenter la taille du titre */
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Paragraphe dans la section Contact */
+#contact p {
+    font-size: 18px; /* Augmenter la taille du texte */
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Formulaire de Contact */
+#contact form {
+    max-width: 800px; /* Limiter la largeur pour garder une belle proportion */
+    margin: 0 auto; /* Centrer le formulaire */
+    padding: 20px;
+    background-color: #fff; /* Fond blanc pour le formulaire */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ajouter une ombre légère */
+}
+
+/* Champ de texte dans le formulaire */
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Bouton dans le formulaire de contact */
+#contact form button {
+    background-color: #ffd700;
+    color: #000;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact form button:hover {
+    background-color: #e6b800; /* Variation de couleur au survol */
+}
+
+/* Media Query pour la section Contact sur les écrans plus petits */
+@media (max-width: 768px) {
+    #contact {
+        padding: 60px 15px; /* Moins de padding sur les petits écrans */
+    }
+
+    #contact h2 {
+        font-size: 28px; /* Taille de titre réduite pour les petits écrans */
+    }
+
+    #contact p {
+        font-size: 16px; /* Taille de texte réduite pour les petits écrans */
+    }
+
+    #contact form {
+        padding: 15px; /* Réduire le padding du formulaire sur les petits écrans */
+    }
+
+    #contact form input,
+    #contact form textarea {
+        font-size: 14px; /* Réduire la taille des champs sur les petits écrans */
+    }
+
+    #contact form button {
+        font-size: 16px; /* Taille du bouton réduite sur les petits écrans */
+    }
+}
 
 /* Pied de page */
 footer {
