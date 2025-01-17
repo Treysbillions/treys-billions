@@ -31,3 +31,22 @@ document.querySelectorAll('.diaporama-slide img').forEach(img => {
     img.style.height = 'auto'; // Maintient les proportions
     img.style.margin = '0 auto'; // Centre l'image horizontalement
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        },
+        { threshold: 0.1 }
+    );
+
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+});

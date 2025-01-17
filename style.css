@@ -158,34 +158,30 @@ header .overlay p {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
-/*Section accueil */
-.accueil {
-    padding: 50px 20px;
-    background-color: #fff;
+/* Section d'accueil */
+#accueil {
+    display: flex; /* Utilisation de Flexbox */
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    background-color: #f8f5f0; /* Couleur de fond */
     text-align: center;
 }
+
+/* Image d'accueil */
+#accueil img {
+    max-width: 50%; /* Réduit la taille de l'image à 50% de la largeur de la section */
+    height: auto; /* Maintient les proportions de l'image */
+    border-radius: 10px; /* Coins arrondis pour un effet visuel agréable */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour un effet professionnel */
+}
+
 /* Réduire la taille de l'image à 50% de sa taille originale */
 img {
     width: 50%; /* Redimensionner à 50% */
     height: auto; /* Maintenir le ratio de l'image */
 }
 
-/* Centrer l'image d'accueil */
-#accueil {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Occupe toute la hauteur de la fenêtre */
-    background-color: #f8f5f0; /* Assurez-vous que le fond s'accorde avec le site */
-    text-align: center;
-}
-
-#accueil img {
-    max-width: 50%; /* Réduit la taille de l'image à 50% de la largeur disponible */
-    height: auto; /* Maintient les proportions */
-    border-radius: 10px; /* Coins arrondis pour un effet visuel agréable */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour un effet professionnel */
-}
 
 
 /* Section des Formations */
@@ -411,4 +407,66 @@ footer p {
     footer p {
         font-size: 0.9em;
     }
+}
+/* Animations générales */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Section d'accueil */
+#accueil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f5f0;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out; /* Apparition fluide */
+}
+
+#accueil img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out; /* Transition fluide au survol */
+    animation: zoomIn 1.5s ease-in-out; /* Zoom progressif */
+}
+
+#accueil img:hover {
+    transform: scale(1.1); /* Zoom au survol */
+}
+
+/* Animation des sections */
+section {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    position: relative;
+}
+
+/* Animation pour les éléments */
+.section-header {
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.diaporama-container {
+    animation: fadeIn 1.5s ease-in-out forwards, zoomIn 2s ease-out forwards;
 }
