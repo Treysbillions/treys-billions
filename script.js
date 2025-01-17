@@ -1,39 +1,33 @@
-// Gestion du diaporama
-let slideIndex = 0;
+// Diaporama JavaScript
+const slides = document.querySelectorAll('.diaporama-slide');
+let currentIndex = 0;
 
-// Fonction pour changer le diaporama
-function changeSlide(n) {
-    const slides = document.querySelectorAll('.diaporama-slide');
-    slideIndex += n;
-
-    if (slideIndex < 0) {
-        slideIndex = slides.length - 1; // Retour à la dernière image si avant la première
-    } else if (slideIndex >= slides.length) {
-        slideIndex = 0; // Retour à la première image si après la dernière
-    }
-
-    // Mise à jour de la position du diaporama
-    document.querySelector('.diaporama-slides').style.transform = `translateX(-${slideIndex * 100}%)`;
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${100 * (i - index)}%)`;
+    });
 }
 
-// Fonction d'initialisation automatique du diaporama
-function autoSlide() {
-    const slides = document.querySelectorAll('.diaporama-slide');
-    slideIndex = (slideIndex + 1) % slides.length;
-    document.querySelector('.diaporama-slides').style.transform = `translateX(-${slideIndex * 100}%)`;
-    setTimeout(autoSlide, 5000); // Change toutes les 5 secondes
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
 }
 
-// Ajouter des événements aux boutons de navigation
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.prev').addEventListener('click', function() {
-        changeSlide(-1);
-    });
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+}
 
-    document.querySelector('.next').addEventListener('click', function() {
-        changeSlide(1);
-    });
+// Ajouter les événements aux boutons
+document.querySelector('.next').addEventListener('click', nextSlide);
+document.querySelector('.prev').addEventListener('click', prevSlide);
 
-    // Démarrer le diaporama automatique
-    autoSlide();
+// Afficher la première slide
+showSlide(currentIndex);
+
+// Réduire la taille des images du diaporama
+document.querySelectorAll('.diaporama-slide img').forEach(img => {
+    img.style.maxWidth = '70%'; // Redimensionne à 70% de la largeur du conteneur
+    img.style.height = 'auto'; // Maintient les proportions
+    img.style.margin = '0 auto'; // Centre l'image horizontalement
 });
