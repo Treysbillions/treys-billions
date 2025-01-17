@@ -229,26 +229,69 @@ img {
     color: #333;
 }
 
-/* Style du diaporama */
+/* Section Diaporama */
 .diaporama-container {
     position: relative;
-    max-width: 1000px; /* La largeur maximale du diaporama */
+    max-width: 900px;
     margin: auto;
 }
 
 .diaporama-slides {
     display: flex;
     overflow: hidden;
-}
-
-.diaporama-slide {
-    min-width: 100%;
     transition: transform 0.5s ease-in-out;
 }
 
 .diaporama-slide img {
-    width: 100%; /* L'image s'adapte à la taille du conteneur */
-    border-radius: 10px; /* Ajoutez des coins arrondis si vous voulez */
+    width: 80%; /* Réduire la taille de l'image */
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: opacity 1s ease;
+}
+
+/* Navigation du diaporama */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev {
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.next {
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+/* Animation du diaporama */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.diaporama-slide {
+    animation: slideIn 1s ease-in-out;
 }
 
 /* Boutons de navigation */
@@ -302,40 +345,74 @@ img {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Cadres pour les statistiques */
+/* Section Statistiques */
 #statistiques {
-    padding: 50px 20px;
-    background-color: #f8f5f0;
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
     text-align: center;
+    padding: 40px 20px;
+    background-color: #f5f5dc;
+}
+
+/* Conteneur du titre et de la phrase */
+.statistiques-header {
+    margin-bottom: 40px;
+}
+
+.statistiques-header h2 {
+    font-size: 36px;
+    color: #ffd700;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-out;
+}
+
+.statistiques-header p {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-out 0.5s;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Conteneur des cartes statistiques (disposition verticale) */
+.statistique-cards {
+    display: block;
+    gap: 20px;
+    margin: auto;
+    max-width: 600px; /* Limite de largeur */
 }
 
 .statistique-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #000;
     padding: 20px;
-    width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    width: 100%; /* Utilise toute la largeur possible */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
 .statistique-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
 }
 
 .statistique-card h3 {
-    font-size: 2rem;
-    font-weight: bold;  /* Gras pour les chiffres */
+    font-size: 36px;
+    color: #ffd700;
     margin-bottom: 10px;
 }
 
 .statistique-card p {
-    font-size: 1.2rem;
-    font-style: italic;  /* Italique pour les descriptions */
+    font-size: 16px;
+    color: #000;
 }
 
 /* Pied de page */
