@@ -249,14 +249,15 @@ ul.list {
 }
 
 .createur-img {
-    width: 150px; /* Image de taille réduite */
-    height: 150px; /* Garder la taille proportionnelle */
-    object-fit: cover; /* Assure que l'image couvre la zone sans être déformée */
+    width: 100px; /* Réduire la taille des images à 100px de largeur */
+    height: 100px; /* Assurez-vous que l'image conserve une forme carrée */
+    object-fit: cover; /* Garder l'image bien proportionnée et coupée si nécessaire */
     border-radius: 50%; /* Forme ronde */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet visuel agréable */
     transition: transform 0.3s ease-in-out; /* Effet de transition lors du survol */
 }
 
+/* Agrandir l'image au survol */
 .createur-img:hover {
     transform: scale(1.1); /* Agrandir l'image au survol */
 }
