@@ -19,18 +19,19 @@ git push -u origin master
 </head>
 <body>
       <!-- Section Header -->
-      <header>
-        <video src="videos/video.mp4" autoplay loop muted title="Background video">
-          Your browser does not support the video tag.
-        </video>
-        <div class="overlay">
-          <h1>Treys Billions</h1>
-          <p>Transformez votre avenir professionnel dès aujourd'hui</p>
-          <button aria-label="Discover our training">
-            Découvrez nos formations
-          </button>
+        <div class="video-container">
+          <video autoplay muted loop id="background-video">
+            <source src="videos/video.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+          </video>
+          <div class="content">
+            <h1>Treys Billions</h1>
+            <p>Transformez votre avenir professionnel dès aujourd'hui</p>
+            <p>Découvrez nos formations</p>
+            <a href="formations.html" class="btn">Voir les formations</a>
+          </div>
         </div>
-      </header>
+      </section>
 
     <header>
         <!-- Section Accueil -->
