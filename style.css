@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Times New Roman', serif;  /* Utilisation de la police Times New Roman */
+    font-family: 'Times New Roman', serif;  /* Police Times New Roman */
     line-height: 1.6;
     color: #333;
     background-color: #f8f5f0;
@@ -94,13 +94,47 @@ nav ul li a:hover {
     }
 }
 
-/* Style pour l'image d'accueil */
-.accueil-img {
-    width: 40%;  /* Réduit la largeur de l'image à 40% */
-    max-width: 600px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
+/* En-tête avec vidéo */
+header {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+header .overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+header .overlay p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
 /* Section Créateurs */
@@ -132,7 +166,7 @@ nav ul li a:hover {
 }
 
 .diaporama-slide {
-    min-width: 100%;
+    min-width: 33.33%;  /* Trois images côte à côte */
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -140,15 +174,15 @@ nav ul li a:hover {
 }
 
 .diaporama-slide img {
-    width: 70%;  /* Réduit la taille des images à 70% de la largeur du conteneur */
-    max-width: 350px;  /* Limite la taille maximale à 350px */
+    width: 90%;  /* Réduit la taille des images à 90% de la largeur du conteneur */
+    max-width: 300px;  /* Limite la taille maximale à 300px */
     height: auto;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
 }
 
 .diaporama-slide img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05);  /* Effet de zoom au survol */
 }
 
 /* Animation des boutons de navigation (précédent et suivant) */
@@ -175,63 +209,6 @@ nav ul li a:hover {
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.7);
-}
-
-/* Section Formations */
-#formations {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-#formations h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-
-.formations {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.formation-card {
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.formation-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.formation-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.order-button {
-    margin-top: auto;
-    padding: 10px 20px;
-    background-color: #c69c6d;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.order-button:hover {
-    background-color: #b59e68;
 }
 
 /* Cadres pour les statistiques */
