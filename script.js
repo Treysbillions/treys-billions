@@ -45,3 +45,15 @@ const observer = new IntersectionObserver((entries) => {
 
 sections.forEach(section => observer.observe(section));
 
+document.querySelectorAll(".page-link").forEach(function(link) {
+    link.addEventListener("click", function(event) {
+        event.preventDefault();
+        let target = document.querySelector(this.getAttribute("href"));
+        document.querySelectorAll(".page").forEach(function(page) {
+            page.style.display = "none"; // Masquer toutes les pages
+        });
+        target.style.display = "block"; // Afficher la page ciblée
+    });
+});
+
+
