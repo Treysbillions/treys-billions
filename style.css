@@ -152,6 +152,8 @@ img {
 .accueil-img {
     width: 300px; /* Largeur fixe de 300px */
     height: auto; /* Ajuste la hauteur en fonction de la largeur */
+    justify-items: center; /* Centrer l'image horizontalement */
+    align-items: center;  /* Centrer l'image verticalement */
 }
 
 /* Section des Formations */
@@ -229,69 +231,26 @@ img {
     color: #333;
 }
 
-/* Section Diaporama */
+/* Diaporama */
 .diaporama-container {
     position: relative;
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
+    overflow: hidden;
 }
 
 .diaporama-slides {
     display: flex;
-    overflow: hidden;
-    transition: transform 0.5s ease-in-out;
-}
-
-.diaporama-slide img {
-    width: 80%; /* Réduire la taille de l'image */
-    height: auto;
-    margin: 0 auto;
-    border-radius: 10px;
-    transition: opacity 1s ease;
-}
-
-/* Navigation du diaporama */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    padding: 16px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    border-radius: 50%;
-    user-select: none;
-    z-index: 10;
-    transition: background-color 0.3s ease;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.prev {
-    left: 10px;
-    transform: translateY(-50%);
-}
-
-.next {
-    right: 10px;
-    transform: translateY(-50%);
-}
-
-/* Animation du diaporama */
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
+    transition: transform 0.5s ease;
 }
 
 .diaporama-slide {
-    animation: slideIn 1s ease-in-out;
+    min-width: 100%;
+}
+
+.diaporama-slide img {
+    width: 100%;
+    border-radius: 10px;
 }
 
 /* Boutons de navigation */
@@ -301,35 +260,11 @@ img {
     padding: 16px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    font-size: 18px;
+    font-size: 24px;
     border: none;
     cursor: pointer;
     border-radius: 50%;
-    user-select: none;
-}
-
-.prev {
-    left: 10px;
     transform: translateY(-50%);
-}
-
-.next {
-    right: 10px;
-    transform: translateY(-50%);
-}
-
-
-/* Animation des boutons de navigation (précédent et suivant) */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 2rem;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
     z-index: 10;
 }
 

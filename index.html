@@ -44,7 +44,8 @@ git push -u origin master
 
     <!-- Accueil -->
     <div id="accueil" class="container" style="text-align: center; padding: 40px 20px; background-color: #f5f5dc; color: #000000;">
-        <h2>Bienvenue sur le site de formations de TREYS BILLIONS</h2>
+        <title>Accueil</title>
+        <h2>Bienvenue sur le site de formations de TREYS BILLIONS</h2>>
         <h2 style="color: #000000; font-size: 36px; margin-bottom: 20px;">Votre destination pour des formations en ligne de qualité</h2>
         <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
             Sur ce site, nous croyons au pouvoir de la connaissance pour transformer des vies. 
@@ -81,7 +82,7 @@ git push -u origin master
     <!-- Formations -->
     <section id="formations">
         <div class="container">
-            <h2><center>Nos Formations</center></h2>
+            <title>Nos formations</title>
             <p><center>Choisissez le forfait qui vous correspond et commencez dès aujourd'hui.</center></p>
             <div class="formations">
                 <div class="formation-card">
@@ -121,66 +122,35 @@ git push -u origin master
     <!-- Créateur -->
     <section id="createur">
         <div class="container">
-            <h2>Découvrez le Créateur</h2>
+            <title>Découvrez le créateur</title>
             <p>
                 Le créateur de Treys Billions est un passionné d'investissement et de développement personnel. Avec une vision claire de l'éducation en ligne et du partage de connaissances, il a conçu cette plateforme pour aider ceux qui souhaitent exceller dans leurs carrières.
             </p> 
             
             <div class="diaporama-container">
                 <div class="diaporama-slides">
-                    <div class="diaporama-slide"><img src="images/createur1.jpg" alt="Créateur 1"></div>
-                    <div class="diaporama-slide"><img src="images/createur3.jpg" alt="Créateur 2"></div>
-                    <div class="diaporama-slide"><img src="images/createur4.jpg" alt="Créateur 3"></div>
+                    <div class="diaporama-slide">
+                        <img src="image1.jpg" alt="Image 1">
+                    </div>
+                    <div class="diaporama-slide">
+                        <img src="image2.jpg" alt="Image 2">
+                    </div>
+                    <div class="diaporama-slide">
+                        <img src="image3.jpg" alt="Image 3">
+                    </div>
                 </div>
-                <button class="prev">&#10094;</button>
-                <button class="next">&#10095;</button>
+                <!-- Boutons de navigation -->
+                <button class="prev">❮</button>
+                <button class="next">❯</button>
             </div>
         
-            <script>
-                // JavaScript pour contrôler le diaporama
-                let slideIndex = 0;
-        
-                function showSlides() {
-                    let slides = document.querySelectorAll('.diaporama-slide');
-                    let totalSlides = slides.length;
-        
-                    // Si le diaporama est à la dernière image, revenir à la première
-                    if (slideIndex >= totalSlides) {
-                        slideIndex = 0;
-                    } else if (slideIndex < 0) {
-                        slideIndex = totalSlides - 1;
-                    }
-        
-                    // Mettre à jour la position des slides pour le mouvement
-                    let offset = -slideIndex * 100;
-                    document.querySelector('.diaporama-slides').style.transform = `translateX(${offset}%)`;
-                }
-        
-                // Fonction pour passer à l'image précédente
-                function prevSlide() {
-                    slideIndex--;
-                    showSlides();
-                }
-        
-                // Fonction pour passer à l'image suivante
-                function nextSlide() {
-                    slideIndex++;
-                    showSlides();
-                }
-        
-                // Ajouter des événements aux boutons
-                document.querySelector('.prev').addEventListener('click', prevSlide);
-                document.querySelector('.next').addEventListener('click', nextSlide);
-        
-                // Afficher le diaporama au démarrage
-                showSlides();
-            </script>
-        
+            <script src="script.js"></script>
 
     <!-- Témoignages -->
      <center> 
         <section id="temoignages">
         <div class="container">
+            <title>Témoignages</title>
             <h2>Ils ont suivi nos formations</h2>
             <p>Découvrez les témoignages de ceux qui ont transformé leur carrière grâce à nos formations.</p>
             <div class="temoignage-card">
@@ -204,21 +174,21 @@ git push -u origin master
     <!-- Section Statistiques -->
 <section id="statistiques">
     <div class="statistiques-header">
-        <h2>Nos Statistiques</h2>
+        <title>Nos statistiques</title>
         <p>Découvrez les chiffres clés qui témoignent de la réussite de nos formations.</p>
     </div>
 
     <div class="statistique-cards">
         <div class="statistique-card">
-            <h3><span class="counter" data-target="254">0</span></h3>
+            <h3><span class="counter" data-target="5000">254</span></h3>
             <p>Personnes formées</p>
         </div>
         <div class="statistique-card">
-            <h3><span class="counter" data-target="3">0</span></h3>
+            <h3><span class="counter" data-target="3">3</span></h3>
             <p>Formations disponibles</p>
         </div>
         <div class="statistique-card">
-            <h3><span class="counter" data-target="100">0</span>%</h3>
+            <h3><span class="counter" data-target="100">100</span>%</h3>
             <p>Satisfaction client</p>
         </div>
     </div>
@@ -227,7 +197,7 @@ git push -u origin master
     <!-- Contact -->
     <section id="contact">
         <div class="container">
-            <h2> <center>Contactez-nous</center></h2>
+            <title>Contactez-nous</title>
             <p> <center>Nous sommes là pour répondre à vos questions.</center></p>
             <form action="mailto:ascompacte10@gmail.com" method="post" enctype="text/plain" style="text-align: center;">
                 <input type="text" placeholder="Nom" required style="padding: 10px; margin: 5px; width: 80%;">
