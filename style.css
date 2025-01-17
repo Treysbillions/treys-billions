@@ -160,29 +160,27 @@ header .overlay p {
 }
 /* Section d'accueil */
 #accueil {
-    display: flex; /* Utilisation de Flexbox */
-    justify-content: center; /* Centrage horizontal */
-    align-items: center; /* Centrage horizontal */
-    height: 100vh; /* Prend toute la hauteur de l'écran */
-    background-color: #f8f5f0; /* Couleur de fond */
+    display: flex;
+    flex-direction: row; /* Dispose les éléments en ligne horizontale */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    background-color: #f8f5f0;
     text-align: center;
+    gap: 20px; /* Espace entre les éléments */
 }
 
-/* Image d'accueil */
+/* Contenu */
+#accueil .content {
+    max-width: 400px; /* Largeur maximale du texte */
+}
+
 #accueil img {
     max-width: 50%; /* Réduit la taille de l'image à 50% de la largeur de la section */
     height: auto; /* Maintient les proportions de l'image */
     border-radius: 10px; /* Coins arrondis pour un effet visuel agréable */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour un effet professionnel */
 }
-
-/* Réduire la taille de l'image à 50% de sa taille originale */
-img {
-    width: 50%; /* Redimensionner à 50% */
-    height: auto; /* Maintenir le ratio de l'image */
-}
-
-
 
 /* Section des Formations */
 .formations {
