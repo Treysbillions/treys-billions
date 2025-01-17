@@ -16,14 +16,23 @@ function prevSlide() {
 
 function updateSlidesPosition() {
     const container = document.querySelector('.diaporama-container');
-    container.style.transform = `translateX(-${currentIndex * 100}%)`; // Déplace les images
+    if (container) {
+        container.style.transform = `translateX(-${currentIndex * 100}%)`; // Déplace les images
+    }
 }
 
 // Change les images toutes les 3 secondes
 setInterval(nextSlide, 3000);
 
-// Écouteurs d'événements pour les flèches de navigation (si vous en avez)
-document.querySelector('.diaporama-next').addEventListener('click', nextSlide);
-document.querySelector('.diaporama-prev').addEventListener('click', prevSlide);
+// Vérification pour s'assurer que les éléments existent avant d'ajouter les écouteurs d'événements
+const nextButton = document.querySelector('.diaporama-next');
+const prevButton = document.querySelector('.diaporama-prev');
 
+if (nextButton) {
+    nextButton.addEventListener('click', nextSlide);
+}
+
+if (prevButton) {
+    prevButton.addEventListener('click', prevSlide);
+}
 
