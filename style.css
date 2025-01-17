@@ -37,6 +37,67 @@ button {
 button:hover {
     background-color: #a6815e;
 }
+/* Style général pour le header */
+header {
+    position: relative;  /* Permet à la div overlay de se positionner par rapport au header */
+    width: 100%;
+    height: 100vh; /* Hauteur de l'écran */
+    overflow: hidden; /* Assure que rien ne dépasse */
+}
+
+/* Vidéo pleine largeur et hauteur */
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplir l'espace sans déformer la vidéo */
+    z-index: -1; /* La vidéo sera derrière le texte et le bouton */
+}
+
+/* Overlay par-dessus la vidéo */
+header .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Centrer le texte et le bouton */
+    text-align: center;
+    color: white;
+    z-index: 1; /* Permet de superposer le texte au-dessus de la vidéo */
+}
+
+/* Style pour le titre */
+header .overlay h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ombre pour rendre le texte lisible */
+}
+
+/* Style pour le texte */
+header .overlay p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ombre pour rendre le texte lisible */
+}
+
+/* Style du bouton */
+header .overlay button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #ffd700;
+    border: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+header .overlay button:hover {
+    background-color: #e6b800;  /* Couleur au survol */
+}
 
 /* Démarcation entre les pages */
 section {
@@ -63,16 +124,16 @@ section h2 {
 
 /* Styles de la navigation */
 nav {
-    background-color: #333;
+    position: absolute; /* Positionner au-dessus de la vidéo */
+    top: 0; /* Coller au sommet de la page */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);  /* Fond semi-transparent */
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2; /* S'assurer que la barre de navigation est au-dessus de la vidéo */
 }
 
 nav .logo {
@@ -248,76 +309,43 @@ ul.list {
     margin-top: 50px;
 }
 
-.createur-img {
-    width: 100px; /* Réduire la taille des images à 100px de largeur */
-    height: 100px; /* Assurez-vous que l'image conserve une forme carrée */
-    object-fit: cover; /* Garder l'image bien proportionnée et coupée si nécessaire */
-    border-radius: 50%; /* Forme ronde */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet visuel agréable */
-    transition: transform 0.3s ease-in-out; /* Effet de transition lors du survol */
-}
-
-/* Agrandir l'image au survol */
-.createur-img:hover {
-    transform: scale(1.1); /* Agrandir l'image au survol */
-}
-
+/* Conteneur du diaporama */
 .diaporama {
     position: relative;
-    width: 30%; /* Largeur du conteneur du diaporama réduite (ajustez selon votre besoin) */
-    margin: 0 auto; /* Centrer le diaporama */
+    width: 30%; /* Ajustez la largeur à votre besoin */
+    margin: 50px auto; /* Centrer le diaporama */
     overflow: hidden; /* Empêche les images de dépasser du conteneur */
-    border-radius: 10px; /* Coins arrondis */
 }
 
-/* Conteneur des diapositives */
+/* Conteneur des diapositives (affichage en ligne horizontal) */
 .diaporama-container {
     display: flex;
-    transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out; /* Transition pour le défilement fluide */
 }
 
-/* Diapositive individuelle (réduit en taille) */
+/* Chaque diapositive (image) */
 .diaporama-slide {
-    width: 100%; /* Chaque image occupe 100% de la largeur du conteneur */
-    object-fit: cover; /* Garder l'aspect des images sans les déformer */
+    width: 100%; /* Chaque image prend 100% de la largeur du conteneur */
     display: block;
 }
 
-/* Section Statistiques */
-#statistiques {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f5f5dc;
+.diaporama-slide img {
+    width: 100%; /* Les images prennent toute la largeur de leur conteneur */
+    height: auto; /* Maintient les proportions des images */
 }
 
-/* Conteneur du titre et de la phrase */
-.statistiques-header {
-    margin-bottom: 40px;
+/* Animation pour faire défiler les images */
+@keyframes slider {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
 }
 
-.statistiques-header h2 {
-    font-size: 36px;
-    color: #ffd700;
-    margin-bottom: 10px;
-    animation: fadeIn 1s ease-out;
+.diaporama-container {
+    animation: slider 9s infinite; /* Le défilement dure 9 secondes et est infini */
 }
 
-.statistiques-header p {
-    font-size: 18px;
-    color: #000;
-    margin-bottom: 40px;
-    animation: fadeIn 1s ease-out 0.5s;
-}
-
-/* Animation d'apparition */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
 
 /* Conteneur des cartes statistiques (disposition verticale) */
 .statistique-cards {
