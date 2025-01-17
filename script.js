@@ -1,59 +1,29 @@
-// Diaporama JavaScript
+let currentIndex = 0; // L'index de l'image actuellement affichée
 const slides = document.querySelectorAll('.diaporama-slide');
-let currentIndex = 0;
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.style.transform = `translateX(${100 * (i - index)}%)`;
-    });
-}
+const totalSlides = slides.length;
 
 function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
+    // Passe à l'image suivante
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlidesPosition();
 }
 
 function prevSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(currentIndex);
+    // Passe à l'image précédente
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlidesPosition();
 }
 
-// Ajouter les événements aux boutons
-document.querySelector('.next').addEventListener('click', nextSlide);
-document.querySelector('.prev').addEventListener('click', prevSlide);
+function updateSlidesPosition() {
+    const container = document.querySelector('.diaporama-container');
+    container.style.transform = `translateX(-${currentIndex * 100}%)`; // Déplace les images
+}
 
-// Afficher la première slide
-showSlide(currentIndex);
+// Change les images toutes les 3 secondes
+setInterval(nextSlide, 3000);
 
-// Réduire la taille des images du diaporama
-document.querySelectorAll('.diaporama-slide img').forEach(img => {
-    img.style.maxWidth = '70%'; // Redimensionne à 70% de la largeur du conteneur
-    img.style.height = 'auto'; // Maintient les proportions
-    img.style.margin = '0 auto'; // Centre l'image horizontalement
-});
-
-// Ajoute une classe visible lors du défilement
-const sections = document.querySelectorAll('section');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.1 });
-
-sections.forEach(section => observer.observe(section));
-
-document.querySelectorAll(".page-link").forEach(function(link) {
-    link.addEventListener("click", function(event) {
-        event.preventDefault();
-        let target = document.querySelector(this.getAttribute("href"));
-        document.querySelectorAll(".page").forEach(function(page) {
-            page.style.display = "none"; // Masquer toutes les pages
-        });
-        target.style.display = "block"; // Afficher la page ciblée
-    });
-});
+// Écouteurs d'événements pour les flèches de navigation (si vous en avez)
+document.querySelector('.diaporama-next').addEventListener('click', nextSlide);
+document.querySelector('.diaporama-prev').addEventListener('click', prevSlide);
 
 
