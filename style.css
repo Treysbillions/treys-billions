@@ -263,25 +263,20 @@ ul.list {
 }
 
 
-/* Container du diaporama */
-.diaporama {
-    position: relative;
-    width: 100%;
-    display: flex;  /* Utilisation de flexbox pour aligner les images horizontalement */
-    justify-content: center;  /* Centrer les images */
-    gap: 20px;  /* Espacement entre les images */
-    overflow: hidden;  /* Cacher les images qui sortent du conteneur */
-}
-
+/* Conteneur du diaporama */
 .diaporama-container {
-    display: flex;  /* Flexbox pour aligner les images horizontalement */
-    transition: transform 1s ease-in-out;
+    display: flex; /* Flexbox pour aligner les images côte à côte */
+    width: 300%; /* Affiche 3 images à la fois (100% * 3) */
+    transition: transform 1s ease-in-out; /* Transition fluide */
 }
 
+/* Diapositive individuelle */
 .diaporama-slide {
     width: 33.33%; /* Chaque image occupe 1/3 de la largeur du conteneur */
-    object-fit: cover; /* Ajuste les images pour qu'elles remplissent l'espace sans déformation */
+    object-fit: cover; /* Pour garder l'aspect de l'image sans la déformer */
+    display: block;
 }
+
 
 /* Flèches de navigation du diaporama */
 .diaporama-prev, .diaporama-next {
