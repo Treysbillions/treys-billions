@@ -37,6 +37,28 @@ button {
 button:hover {
     background-color: #a6815e;
 }
+/* Démarcation entre les pages */
+section {
+    margin: 50px 0; /* Espace entre les sections */
+    padding: 30px;
+    border-top: 2px solid #c69c6d; /* Ligne dorée en haut de chaque section */
+    background-color: #f8f5f0; /* Fond pour contraster */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour démarcation */
+}
+
+/* Spécifique à la première section (par exemple, l'accueil) */
+section:first-of-type {
+    border-top: none; /* Pas de bordure en haut de la première section */
+}
+
+/* Texte centré pour les titres des sections */
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
 
 /* Styles de la navigation */
 nav {
@@ -148,27 +170,23 @@ img {
     height: auto; /* Maintenir le ratio de l'image */
 }
 
-/* Exemple pour une image spécifique */
-.accueil-img {
-    width: 300px; /* Largeur fixe de 300px */
-    height: auto; /* Ajuste la hauteur en fonction de la largeur */
-    justify-items: center; /* Centrer l'image horizontalement */
-    align-items: center;  /* Centrer l'image verticalement */
-}
 /* Centrer l'image d'accueil */
-.accueil-img-container {
+#accueil {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Occuper toute la hauteur de la fenêtre */
-    background-color: #f8f5f0; /* Fond pour la section */
+    height: 100vh; /* Occupe toute la hauteur de la fenêtre */
+    background-color: #f8f5f0; /* Assurez-vous que le fond s'accorde avec le site */
+    text-align: center;
 }
 
-.accueil-img-container img {
-    width: 50%; /* Réduire la taille de l'image à 50% de la largeur */
-    height: auto; /* Conserver les proportions */
-    border-radius: 10px; /* Optionnel : coins arrondis */
+#accueil img {
+    max-width: 50%; /* Réduit la taille de l'image à 50% de la largeur disponible */
+    height: auto; /* Maintient les proportions */
+    border-radius: 10px; /* Coins arrondis pour un effet visuel agréable */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour un effet professionnel */
 }
+
 
 /* Section des Formations */
 .formations {
