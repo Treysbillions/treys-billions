@@ -1,0 +1,170 @@
+/* Styles généraux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f5f0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    border: none;
+    padding: 10px 20px;
+    background-color: #c69c6d;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a6815e;
+}
+
+/* En-tête avec vidéo */
+header {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+header .overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+header .overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Section Formations */
+#formations {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#formations h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.formations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.formation-card {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.formation-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.order-button {
+    margin-top: auto;
+    padding: 10px 20px;
+    background-color: #c69c6d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.order-button:hover {
+    background-color: #b59e68;
+}
+
+/* Pied de page */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    header p {
+        font-size: 1.2em;
+    }
+    .formations {
+        flex-direction: column;
+    }
+    .formation-card {
+        width: 100%;
+    }
+    footer p {
+        font-size: 0.9em;
+    }
+}
