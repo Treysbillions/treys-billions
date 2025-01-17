@@ -37,6 +37,147 @@ button {
 button:hover {
     background-color: #a6815e;
 }
+/* Styles de la navigation */
+nav {
+    background-color: #333;  /* Couleur de fond sombre */
+    padding: 10px 20px;  /* Espacement autour des éléments */
+    display: flex;
+    justify-content: space-between;  /* Espace entre le logo et les liens */
+    align-items: center;  /* Aligne les éléments verticalement */
+    position: sticky;  /* Fixe la barre de navigation en haut lors du défilement */
+    top: 0;
+    width: 100%;
+    z-index: 100;  /* S'assure que la barre de navigation reste au-dessus des autres éléments */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Ombre légère pour un effet de profondeur */
+}
+
+/* Logo */
+nav .logo {
+    color: #fff;  /* Couleur du texte en blanc */
+    font-size: 1.5rem;  /* Taille de la police pour le logo */
+    font-weight: bold;  /* Gras pour le logo */
+    text-transform: uppercase;  /* Mettre en majuscule */
+}
+
+/* Liste des liens de navigation */
+nav ul {
+    display: flex;  /* Aligne les éléments en ligne */
+    list-style: none;  /* Supprime les puces de liste */
+    gap: 20px;  /* Espacement entre les éléments de la liste */
+}
+
+/* Liens de navigation */
+nav ul li a {
+    color: #fff;  /* Couleur des liens en blanc */
+    font-weight: 500;  /* Poids de la police modéré */
+    font-size: 1rem;  /* Taille de la police des liens */
+    text-transform: uppercase;  /* Mettre en majuscule */
+    transition: color 0.3s ease;  /* Transition fluide pour le changement de couleur au survol */
+}
+
+/* Effet de survol des liens */
+nav ul li a:hover {
+    color: #ffd700;  /* Change la couleur du texte en doré au survol */
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;  /* Passe les éléments en colonne pour les petits écrans */
+        align-items: flex-start;  /* Aligne les éléments à gauche */
+    }
+
+    nav ul {
+        flex-direction: column;  /* Les éléments de la liste passent aussi en colonne */
+        gap: 10px;  /* Réduit l'espace entre les éléments */
+    }
+
+    nav .logo {
+        margin-bottom: 20px;  /* Ajoute de l'espace sous le logo sur les petits écrans */
+    }
+}
+/* Style pour l'image d'accueil */
+.accueil-img {
+    width: 50%;  /* Réduit la largeur de l'image à 50% de l'élément parent */
+    max-width: 600px;  /* Limite la largeur maximale de l'image */
+    height: auto;  /* La hauteur s'ajuste automatiquement en fonction de la largeur */
+    margin: 0 auto;  /* Centre l'image horizontalement */
+    display: block;  /* Transforme l'image en élément de type bloc pour permettre le centrage */
+}
+/* Style pour la section Créateurs */
+#createur {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Titre de la section Créateurs */
+#createur h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Diaporama des créateurs */
+.diaporama-container {
+    position: relative;
+    width: 80%;  /* Largeur de 80% du conteneur */
+    max-width: 900px;  /* Largeur maximale du diaporama */
+    margin: 0 auto;  /* Centre le diaporama */
+    overflow: hidden;
+}
+
+.diaporama-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.diaporama-slide {
+    min-width: 100%;  /* Chaque image occupe 100% du conteneur */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.diaporama-slide img {
+    width: 80%;  /* Réduit la taille des images à 80% de la largeur du conteneur */
+    max-width: 400px;  /* Limite la taille maximale à 400px */
+    height: auto;  /* Laisse la hauteur s'ajuster proportionnellement */
+    border-radius: 10px;  /* Coins arrondis pour les images */
+    transition: transform 0.3s ease-in-out;
+}
+
+.diaporama-slide img:hover {
+    transform: scale(1.05);  /* Effet de zoom au survol */
+}
+
+/* Boutons de navigation (précédent et suivant) */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 
 /* En-tête avec vidéo */
 header {
