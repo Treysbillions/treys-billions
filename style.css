@@ -483,7 +483,7 @@ nav a.active {
     text-align: center;
     padding: 40px 20px;
     background-color: #f5f5dc;
-    width: 10%;
+    width: 50%;
     display: block; /* Forcer l'affichage en bloc */
 }
 
