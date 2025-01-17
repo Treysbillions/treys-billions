@@ -136,6 +136,24 @@ header .overlay p {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
+/*Section accueil */
+.accueil {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+/* Réduire la taille de l'image à 50% de sa taille originale */
+img {
+    width: 50%; /* Redimensionner à 50% */
+    height: auto; /* Maintenir le ratio de l'image */
+}
+
+/* Exemple pour une image spécifique */
+.accueil-img {
+    width: 300px; /* Largeur fixe de 300px */
+    height: auto; /* Ajuste la hauteur en fonction de la largeur */
+}
+
 /* Section des Formations */
 .formations {
     padding: 50px 20px;
@@ -211,39 +229,52 @@ header .overlay p {
     color: #333;
 }
 
-/* Diaporama des créateurs */
+/* Style du diaporama */
 .diaporama-container {
     position: relative;
-    width: 80%;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
+    max-width: 1000px; /* La largeur maximale du diaporama */
+    margin: auto;
 }
 
 .diaporama-slides {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    overflow: hidden;
 }
 
 .diaporama-slide {
-    min-width: 33.33%;  /* Trois images côte à côte */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
 }
 
 .diaporama-slide img {
-    width: 90%;  /* Réduit la taille des images à 90% de la largeur du conteneur */
-    max-width: 300px;  /* Limite la taille maximale à 300px */
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+    width: 100%; /* L'image s'adapte à la taille du conteneur */
+    border-radius: 10px; /* Ajoutez des coins arrondis si vous voulez */
 }
 
-.diaporama-slide img:hover {
-    transform: scale(1.05);  /* Effet de zoom au survol */
+/* Boutons de navigation */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
 }
+
+.prev {
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.next {
+    right: 10px;
+    transform: translateY(-50%);
+}
+
 
 /* Animation des boutons de navigation (précédent et suivant) */
 .prev, .next {

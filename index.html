@@ -88,6 +88,8 @@ git push -u origin master
                     <h2>Packaging Argent</h2>
                     <p><strong>Prix : 500€</strong></p>
                     <p>Accédez aux bases essentielles pour démarrer et acquérir les compétences fondamentales nécessaires pour progresser dans votre domaine.</p>
+                    <p></p>
+                    <p></p>
                     <p><strong>Payer par carte bancaire.</strong></p>
                     <form action="https://www.paypal.com" method="post">
                         <button onclick="window.location.href='https://www.paypal.com/paypalme/bohicosloane05/500';">Commander</button>
@@ -97,6 +99,8 @@ git push -u origin master
                     <h2>Packaging Gold</h2>
                     <p><strong>Prix : 5 000€</strong></p>
                     <p>Approfondissez vos connaissances et devenez un expert. Ce programme est conçu pour vous guider dans des stratégies avancées..</p>
+                    <p></p>
+                    <p></p>
                     <p><strong>Payer par carte ou virement bancaire.</strong></p>
                     <form action="https://www.paypal.com" method="post">
                         <button onclick="window.location.href='https://www.paypal.com/paypalme/bohicosloane05/5000';">Commander</button>
@@ -124,15 +128,54 @@ git push -u origin master
             
             <div class="diaporama-container">
                 <div class="diaporama-slides">
-                    <div class="diaporama-slide"><img src="images/createur1.jpg" alt="Créateur 1"></div>
-                    <div class="diaporama-slide"><img src="images/createur3.jpg" alt="Créateur 2"></div>
-                    <div class="diaporama-slide"><img src="images/createur4.jpg" alt="Créateur 3"></div>
+                    <div class="diaporama-slide"><img src="creator1.jpg" alt="Créateur 1"></div>
+                    <div class="diaporama-slide"><img src="creator2.jpg" alt="Créateur 2"></div>
+                    <div class="diaporama-slide"><img src="creator3.jpg" alt="Créateur 3"></div>
                 </div>
                 <button class="prev">&#10094;</button>
                 <button class="next">&#10095;</button>
             </div>
-        </div>
-    </section>
+        
+            <script>
+                // JavaScript pour contrôler le diaporama
+                let slideIndex = 0;
+        
+                function showSlides() {
+                    let slides = document.querySelectorAll('.diaporama-slide');
+                    let totalSlides = slides.length;
+        
+                    // Si le diaporama est à la dernière image, revenir à la première
+                    if (slideIndex >= totalSlides) {
+                        slideIndex = 0;
+                    } else if (slideIndex < 0) {
+                        slideIndex = totalSlides - 1;
+                    }
+        
+                    // Mettre à jour la position des slides pour le mouvement
+                    let offset = -slideIndex * 100;
+                    document.querySelector('.diaporama-slides').style.transform = `translateX(${offset}%)`;
+                }
+        
+                // Fonction pour passer à l'image précédente
+                function prevSlide() {
+                    slideIndex--;
+                    showSlides();
+                }
+        
+                // Fonction pour passer à l'image suivante
+                function nextSlide() {
+                    slideIndex++;
+                    showSlides();
+                }
+        
+                // Ajouter des événements aux boutons
+                document.querySelector('.prev').addEventListener('click', prevSlide);
+                document.querySelector('.next').addEventListener('click', nextSlide);
+        
+                // Afficher le diaporama au démarrage
+                showSlides();
+            </script>
+        
 
     <!-- Témoignages -->
      <center> 
@@ -162,6 +205,7 @@ git push -u origin master
     <div id="statistiques">
         <h2><center> Ils ont suivis nos formations</center></h2>
         <p><center>Découvrez les témoignages de ceux qui ont transformé leur carrière grâce à nos formations.</center></p>
+
         <div class="statistique-card">
             <h3><span class="counter" data-target="254">0</span></h3>
             <p>Personnes formées</p>
