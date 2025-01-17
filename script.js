@@ -32,4 +32,16 @@ document.querySelectorAll('.diaporama-slide img').forEach(img => {
     img.style.margin = '0 auto'; // Centre l'image horizontalement
 });
 
+// Ajoute une classe visible lors du défilement
+const sections = document.querySelectorAll('section');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+sections.forEach(section => observer.observe(section));
 

@@ -173,13 +173,17 @@ header .overlay p {
 /* Contenu */
 #accueil .content {
     max-width: 400px; /* Largeur maximale du texte */
+    text-align: left; /* Alignement du texte à gauche */
 }
 
+/* Image */
 #accueil img {
     max-width: 50%; /* Réduit la taille de l'image à 50% de la largeur de la section */
     height: auto; /* Maintient les proportions de l'image */
     border-radius: 10px; /* Coins arrondis pour un effet visuel agréable */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour un effet professionnel */
+    display: block; /* S'assurer que l'image est un élément de bloc */
+    margin-left: 20px; /* Ajoute un espace à gauche de l'image */
 }
 
 /* Section des Formations */
@@ -388,3 +392,47 @@ footer p {
     font-size: 1em;
 }
 
+/* Style global pour les sections */
+section {
+    padding: 50px 20px; /* Espacement interne */
+    margin: 20px 0; /* Espacement externe */
+    border-top: 2px solid #ccc; /* Ligne de démarcation en haut */
+}
+
+/* Alternance des couleurs de fond */
+section:nth-child(odd) {
+    background-color: #f8f8f8; /* Couleur gris clair */
+}
+
+section:nth-child(even) {
+    background-color: #fff; /* Couleur blanche */
+}
+
+/* Ajout de titres avec démarcations */
+section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #c69c6d; /* Couleur or */
+    margin: 10px auto;
+    border-radius: 5px;
+}
+/* Animation pour les sections */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
