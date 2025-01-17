@@ -147,53 +147,54 @@ header .overlay p {
     flex-wrap: wrap;
 }
 
+/* Conteneur des formations */
+.formations {
+    display: flex; 
+    justify-content: space-between; /* Espace entre les cartes */
+    gap: 20px; /* Espace entre les éléments */
+    margin-top: 40px;
+}
+
 /* Carte de formation */
 .formation-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    background-color: #f0f0f0; /* Fond gris clair */
+    border: 1px solid #000000; /* Bordure noire fine */
     padding: 20px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 30px;
+    width: 30%; /* Chaque carte prend 30% de la largeur du conteneur */
+    box-sizing: border-box; /* Pour inclure le padding et les bordures dans la largeur totale */
+    border-radius: 5px; /* Coins arrondis */
+    text-align: center;
 }
 
-.formation-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+/* Style des titres */
+.formation-card h2 {
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 10px;
 }
 
-.formation-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.formation-card h3 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
-}
-
+/* Style des paragraphes */
 .formation-card p {
-    font-size: 1rem;
-    color: #666;
-    font-style: italic;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
 }
 
-/* Media Queries pour la responsivité */
-@media (max-width: 768px) {
-    .formations {
-        flex-direction: column;
-        align-items: center;
-    }
+/* Style du bouton Commande */
+.formation-card button {
+    background-color: #ffd700; /* Couleur or */
+    color: #000;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
 
-    .formation-card {
-        width: 90%;  /* Les cartes occupent une plus grande largeur sur les petits écrans */
-    }
+.formation-card button:hover {
+    background-color: #e6b800; /* Légère variation au survol */
 }
 
 /* Section Créateurs */

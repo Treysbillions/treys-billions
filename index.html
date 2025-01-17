@@ -123,11 +123,12 @@ git push -u origin master
             <p>
                 Le créateur de Treys Billions est un passionné d'investissement et de développement personnel. Avec une vision claire de l'éducation en ligne et du partage de connaissances, il a conçu cette plateforme pour aider ceux qui souhaitent exceller dans leurs carrières.
             </p> 
+            
             <div class="diaporama-container">
                 <div class="diaporama-slides">
-                    <div class="diaporama-slide"><img src="creator1.jpg" alt="Créateur 1"></div>
-                    <div class="diaporama-slide"><img src="creator2.jpg" alt="Créateur 2"></div>
-                    <div class="diaporama-slide"><img src="creator3.jpg" alt="Créateur 3"></div>
+                    <div class="diaporama-slide"><img src="images/createur1.jpg" alt="Créateur 1"></div>
+                    <div class="diaporama-slide"><img src="images/createur3.jpg" alt="Créateur 2"></div>
+                    <div class="diaporama-slide"><img src="images/createur4.jpg" alt="Créateur 3"></div>
                 </div>
                 <button class="prev">&#10094;</button>
                 <button class="next">&#10095;</button>
@@ -170,29 +171,6 @@ git push -u origin master
             <p>Satisfaction client</p>
         </div>
     </div>
-
-    <script>
-        // Fonction pour animer le compteur
-        document.addEventListener("DOMContentLoaded", function() {
-            const counters = document.querySelectorAll('.counter');
-
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const current = +counter.innerText;
-
-                    if (current < target) {
-                        const increment = target / 100;
-                        counter.innerText = Math.ceil(current + increment);
-                        setTimeout(updateCount, 50);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-                updateCount();
-            });
-        });
-    </script>
 
     <!-- Contact -->
     <section id="contact">
