@@ -8,7 +8,6 @@ git push -u origin master></cd>
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,19 +15,15 @@ git push -u origin master></cd>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
-    <header>
-            <body>
-            </head>
-            <video width="100%" height="auto" autoplay muted loop>
-            <source src="videos/video.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la lecture vidéo.
-        </video>
-        <div class="overlay">
-            <h1>Treys Billions</h1>
-            <p><strong>Transformez votre avenir professionnel dès aujourd'hui</strong></p>
-            <button onclick="window.location.href='#formations'">Découvrez nos formations</button>
-        </div>
-    </header>
+    <!-- Section Header -->
+<header>
+    <video src="videos/video.mp4" autoplay loop muted></video>
+    <div class="overlay">
+        <h1>Treys Billions</h1>
+        <p>Transformez votre avenir professionnel dès aujourd'hui</p>
+        <p>Découvrez nos formations</p>
+    </div>
+</header>
 
     <!-- Navigation -->
     <nav>
@@ -151,74 +146,17 @@ git push -u origin master></cd>
             <h2>Découvrez le Créateur</h2>
             <p>
                 Le créateur de Treys Billions est un passionné d'investissement et de développement personnel. Avec une vision claire de l'éducation en ligne et du partage de connaissances, il a conçu cette plateforme pour aider ceux qui souhaitent exceller dans leurs carrières.
-            </p>
-<!-- Diaporama -->
-<div class="slideshow-container">
-    <div class="slideshow">
-        <div class="slide">
-            <img src="images/createur1.jpg" alt="Image 1">
-        </div>
-        <div class="slide">
-            <img src="images/createur3.jpg" alt="Image 2">
-        </div>
-        <div class="slide">
-            <img src="images/createur4.jpg" alt="Image 3">
-        </div>
-    </div>
-
-    <!-- Points indicateurs -->
-    <div class="dots">
-        <span class="dot" onclick="setSlide(0)"></span>
-        <span class="dot" onclick="setSlide(1)"></span>
-        <span class="dot" onclick="setSlide(2)"></span>
-    </div>
-</div>
-
-<script>
-    let currentIndex = 0;
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
-    const dots = document.querySelectorAll('.dot');
-    let slideInterval;
-
-    // Fonction pour mettre à jour l'affichage des slides
-    function updateSlidesPosition() {
-        const newTransformValue = -currentIndex * 100;
-        const slidesContainer = document.querySelector('.slideshow');
-        slidesContainer.style.transform = `translateX(${newTransformValue}%)`;
-
-        // Mettre à jour les indicateurs
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
-        });
-    }
-
-    // Fonction pour passer à la slide suivante automatiquement
-    function autoSlide() {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateSlidesPosition();
-    }
-
-    // Fonction pour naviguer manuellement vers une slide
-    function setSlide(index) {
-        currentIndex = index;
-        updateSlidesPosition();
-        restartAutoSlide(); // Relancer le timer automatique après une interaction
-    }
-
-    // Redémarrer le diaporama après interaction
-    function restartAutoSlide() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(autoSlide, 3000); // Changement toutes les 3 secondes
-    }
-
-    // Initialisation du diaporama
-    window.onload = () => {
-        updateSlidesPosition(); // Assurer l'affichage correct initial
-        slideInterval = setInterval(autoSlide, 3000); // Lancement automatique
-    };
-</script>
-
+               </p> 
+               <h2>N</h2>
+                <div class="diaporama-container">
+                    <div class="diaporama-slides">
+                        <div class="diaporama-slide"><img src="creator1.jpg" alt="Créateur 1"></div>
+                        <div class="diaporama-slide"><img src="creator2.jpg" alt="Créateur 2"></div>
+                        <div class="diaporama-slide"><img src="creator3.jpg" alt="Créateur 3"></div>
+                    </div>
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+    
     
     <!-- Témoignages -->
     <section id="temoignages">
@@ -240,26 +178,48 @@ git push -u origin master></cd>
         </div>
     </section>
 
-    <!-- Statistiques -->
-    <section id="statistiques">
-        <div class="container">
-            <h2>Statistiques</h2>
-            <div class="statistics">
-                <div class="stat">
-                     <h3 id="counter">254</h3>
-                    <p>Personnes formées</p>
-                </div>
-                <div class="stat">
-                    <h3>3</h3>
-                    <p>Formations disponibles</p>
-                </div>
-                <div class="stat">
-                    <h3>100%</h3>
-                    <p>Satisfaction client</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Section Statistiques -->
+<div id="statistiques">
+    <div class="statistique-card">
+        <h3><span class="counter" data-target="254">0</span></h3>
+        <p>Personnes formées</p>
+    </div>
+    <div class="statistique-card">
+        <h3><span class="counter" data-target="3">0</span></h3>
+        <p>Formations disponibles</p>
+    </div>
+    <div class="statistique-card">
+        <h3><span class="counter" data-target="100">0</span>%</h3>
+        <p>Satisfaction client</p>
+    </div>
+</div>
+<script>
+    // Fonction pour animer le compteur
+    document.addEventListener("DOMContentLoaded", function() {
+        const counters = document.querySelectorAll('.counter');
+    
+        // Fonction pour chaque compteur
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const current = +counter.innerText;
+    
+                // Si le compteur n'a pas atteint sa valeur cible
+                if (current < target) {
+                    const increment = target / 100; // L'incrément de chaque pas
+                    counter.innerText = Math.ceil(current + increment); // Mise à jour du texte
+                    setTimeout(updateCount, 50); // Rappel de la fonction après un délai
+                } else {
+                    counter.innerText = target; // Lorsque le compteur atteint sa cible
+                }
+            };
+    
+            // Démarrer l'animation
+            updateCount();
+        });
+    });
+    </script>
+    
 
     <!-- Contact -->
     <section id="contact">
