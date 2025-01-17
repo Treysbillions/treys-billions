@@ -262,34 +262,47 @@ ul.list {
     transform: scale(1.1); /* Agrandir l'image au survol */
 }
 
-/* Container du diaporama */
-.diaporama-container {
-    display: flex;
-    transition: transform 1s ease-in-out;
-}
-
-/* Diaporama - chaque image */
-.diaporama-slide {
-    width: 30%; /* Ajustez cette valeur pour une taille plus petite ou plus grande */
-    display: block;
-    object-fit: cover; /* Garder l'image intacte en remplissant le conteneur */
-    margin: 0 auto; /* Centrer l'image horizontalement */
-}
 
 /* Container du diaporama */
 .diaporama {
     position: relative;
-    width: 30%; /* Réduire la largeur du conteneur pour qu'il soit plus petit */
-    max-width: 500px; /* Limiter la largeur maximale */
-    margin: 50px auto;
-    overflow: hidden;
-    border-radius: 10px;
+    width: 100%;
+    display: flex;  /* Utilisation de flexbox pour aligner les images horizontalement */
+    justify-content: center;  /* Centrer les images */
+    gap: 20px;  /* Espacement entre les images */
+    overflow: hidden;  /* Cacher les images qui sortent du conteneur */
 }
 
-/* Ajuster la taille des flèches de navigation si nécessaire */
+.diaporama-container {
+    display: flex;  /* Flexbox pour aligner les images horizontalement */
+    transition: transform 1s ease-in-out;
+}
+
+.diaporama-slide {
+    width: 33.33%; /* Chaque image occupe 1/3 de la largeur du conteneur */
+    object-fit: cover; /* Ajuste les images pour qu'elles remplissent l'espace sans déformation */
+}
+
+/* Flèches de navigation du diaporama */
 .diaporama-prev, .diaporama-next {
-    font-size: 20px; /* Réduire la taille des flèches */
-    padding: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.diaporama-prev {
+    left: 10px;
+}
+
+.diaporama-next {
+    right: 10px;
 }
 
 /* Section Statistiques */
