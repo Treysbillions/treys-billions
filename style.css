@@ -219,11 +219,6 @@ header .overlay p {
     column-count: 1; /* Assurez-vous qu'il n'y a qu'une seule colonne */
 }
 
-#accueil .content {
-    max-width: 400px; /* Largeur maximale du texte */
-    text-align: left; /* Alignement du texte à gauche */
-}
-
 /* Image */
 #accueil img {
     max-width: 50%; /* Réduit la taille de l'image à 50% de la largeur de la section */
