@@ -115,6 +115,50 @@ nav ul li a:hover {
         margin-bottom: 20px;
     }
 }
+/* Style global pour les sections */
+section {
+    padding: 50px 20px; /* Espacement interne */
+    margin: 20px 0; /* Espacement externe */
+    border-top: 2px solid #ccc; /* Ligne de démarcation en haut */
+}
+
+/* Alternance des couleurs de fond */
+section:nth-child(odd) {
+    background-color: #f8f8f8; /* Couleur gris clair */
+}
+
+section:nth-child(even) {
+    background-color: #fff; /* Couleur blanche */
+}
+
+/* Ajout de titres avec démarcations */
+section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #c69c6d; /* Couleur or */
+    margin: 10px auto;
+    border-radius: 5px;
+}
+/* Animation pour les sections */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 /* En-tête avec vidéo */
 header {
@@ -163,7 +207,7 @@ header .overlay p {
     display: flex;
     flex-direction: row; /* Dispose les éléments en ligne horizontale */
     justify-content: center; /* Centre les éléments horizontalement */
-    align-items: center; /* Centre les éléments verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
     height: 100vh; /* Prend toute la hauteur de la fenêtre */
     background-color: #f8f5f0;
     text-align: center;
@@ -392,47 +436,3 @@ footer p {
     font-size: 1em;
 }
 
-/* Style global pour les sections */
-section {
-    padding: 50px 20px; /* Espacement interne */
-    margin: 20px 0; /* Espacement externe */
-    border-top: 2px solid #ccc; /* Ligne de démarcation en haut */
-}
-
-/* Alternance des couleurs de fond */
-section:nth-child(odd) {
-    background-color: #f8f8f8; /* Couleur gris clair */
-}
-
-section:nth-child(even) {
-    background-color: #fff; /* Couleur blanche */
-}
-
-/* Ajout de titres avec démarcations */
-section h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-section h2::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 3px;
-    background-color: #c69c6d; /* Couleur or */
-    margin: 10px auto;
-    border-radius: 5px;
-}
-/* Animation pour les sections */
-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-in-out;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
