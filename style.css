@@ -265,16 +265,15 @@ ul.list {
 
 /* Conteneur du diaporama */
 .diaporama-container {
-    display: flex; /* Flexbox pour aligner les images côte à côte */
-    width: 100%; /* Affiche 1 image à la fois (100% * 1) */
+    display: flex; /* Afficher les images horizontalement */
     transition: transform 1s ease-in-out; /* Transition fluide */
 }
 
 /* Diapositive individuelle */
 .diaporama-slide {
-    width: 90%; /* Chaque image occupe 3/3 de la largeur du conteneur */
-    object-fit: cover; /* Pour garder l'aspect de l'image sans la déformer */
-    display: block;
+    width: 100%; /* Chaque image occupe 100% de la largeur du conteneur */
+    object-fit: cover; /* Garder l'aspect des images sans les déformer */
+    display: block; /* Afficher les images en mode bloc */
 }
 
 
