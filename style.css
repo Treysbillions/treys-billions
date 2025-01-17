@@ -261,47 +261,34 @@ ul.list {
     transform: scale(1.1); /* Agrandir l'image au survol */
 }
 
-/* --- Diaporama --- */
-.diaporama {
-    position: relative;
-    width: 80%;
-    max-width: 800px;
-    margin: 50px auto;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
+/* Container du diaporama */
 .diaporama-container {
     display: flex;
     transition: transform 1s ease-in-out;
 }
 
+/* Diaporama - chaque image */
 .diaporama-slide {
-    width: 100%;
+    width: 40%; /* Ajustez cette valeur pour une taille plus petite ou plus grande */
     display: block;
     object-fit: cover; /* Garder l'image intacte en remplissant le conteneur */
+    margin: 0 auto; /* Centrer l'image horizontalement */
 }
 
-/* Flèches de navigation du diaporama */
+/* Container du diaporama */
+.diaporama {
+    position: relative;
+    width: 40%; /* Réduire la largeur du conteneur pour qu'il soit plus petit */
+    max-width: 200px; /* Limiter la largeur maximale */
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Ajuster la taille des flèches de navigation si nécessaire */
 .diaporama-prev, .diaporama-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 30px;
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.diaporama-prev {
-    left: 10px;
-}
-
-.diaporama-next {
-    right: 10px;
+    font-size: 20px; /* Réduire la taille des flèches */
+    padding: 8px;
 }
 
 /* Section Statistiques */
