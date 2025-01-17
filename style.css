@@ -262,41 +262,25 @@ ul.list {
     transform: scale(1.1); /* Agrandir l'image au survol */
 }
 
-
-/* Conteneur du diaporama */
-.diaporama-container {
-    display: flex; /* Afficher les images horizontalement */
-    transition: transform 1s ease-in-out; /* Transition fluide */
+.diaporama {
+    position: relative;
+    width: 30%; /* Largeur du conteneur du diaporama réduite (ajustez selon votre besoin) */
+    margin: 0 auto; /* Centrer le diaporama */
+    overflow: hidden; /* Empêche les images de dépasser du conteneur */
+    border-radius: 10px; /* Coins arrondis */
 }
 
-/* Diapositive individuelle */
+/* Conteneur des diapositives */
+.diaporama-container {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+/* Diapositive individuelle (réduit en taille) */
 .diaporama-slide {
     width: 100%; /* Chaque image occupe 100% de la largeur du conteneur */
     object-fit: cover; /* Garder l'aspect des images sans les déformer */
-    display: block; /* Afficher les images en mode bloc */
-}
-
-
-/* Flèches de navigation du diaporama */
-.diaporama-prev, .diaporama-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 30px;
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.diaporama-prev {
-    left: 10px;
-}
-
-.diaporama-next {
-    right: 10px;
+    display: block;
 }
 
 /* Section Statistiques */
