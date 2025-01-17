@@ -155,6 +155,20 @@ img {
     justify-items: center; /* Centrer l'image horizontalement */
     align-items: center;  /* Centrer l'image verticalement */
 }
+/* Centrer l'image d'accueil */
+.accueil-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Occuper toute la hauteur de la fenêtre */
+    background-color: #f8f5f0; /* Fond pour la section */
+}
+
+.accueil-img-container img {
+    width: 50%; /* Réduire la taille de l'image à 50% de la largeur */
+    height: auto; /* Conserver les proportions */
+    border-radius: 10px; /* Optionnel : coins arrondis */
+}
 
 /* Section des Formations */
 .formations {
