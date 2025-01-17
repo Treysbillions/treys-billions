@@ -37,6 +37,7 @@ button {
 button:hover {
     background-color: #a6815e;
 }
+
 /* Styles de la navigation */
 nav {
     background-color: #333;  /* Couleur de fond sombre */
@@ -96,6 +97,7 @@ nav ul li a:hover {
         margin-bottom: 20px;  /* Ajoute de l'espace sous le logo sur les petits écrans */
     }
 }
+
 /* Style pour l'image d'accueil */
 .accueil-img {
     width: 50%;  /* Réduit la largeur de l'image à 50% de l'élément parent */
@@ -104,6 +106,7 @@ nav ul li a:hover {
     margin: 0 auto;  /* Centre l'image horizontalement */
     display: block;  /* Transforme l'image en élément de type bloc pour permettre le centrage */
 }
+
 /* Style pour la section Créateurs */
 #createur {
     padding: 50px 20px;
@@ -177,7 +180,6 @@ nav ul li a:hover {
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
-
 
 /* En-tête avec vidéo */
 header {
