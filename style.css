@@ -202,21 +202,39 @@ header .overlay p {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
-/* Section d'accueil */
-#accueil {
-    display: flex;
-    flex-direction: row; /* Dispose les éléments en ligne horizontale */
-    justify-content: center; /* Centre les éléments horizontalement */
-    align-items: center; /* Centre les éléments horizontalement */
-    height: 100vh; /* Prend toute la hauteur de la fenêtre */
-    background-color: #f8f5f0;
-    text-align: center;
-    gap: 20px; /* Espace entre les éléments */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Contenu */
-.accueil {
-    column-count: 1; /* Assurez-vous qu'il n'y a qu'une seule colonne */
+/* Section d'accueil */
+#accueil {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f5f5dc;
+    width: 100%;
+    display: block; /* Forcer l'affichage en bloc */
+}
+
+/* Titres et autres éléments */
+h2, h3, p, ul {
+    display: block;
+    margin: 0 auto;
+    max-width: 800px; /* Limiter la largeur pour éviter que le texte s'étale trop */
+    width: 100%;
+    text-align: center;
+}
+
+/* Liste sans style */
+ul.list {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
 }
 
 /* Image */
@@ -227,6 +245,18 @@ header .overlay p {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour un effet professionnel */
     display: block; /* S'assurer que l'image est un élément de bloc */
     margin-left: 20px; /* Ajoute un espace à gauche de l'image */
+}
+
+/* Style du bouton */
+.cta-button {
+    display: inline-block;
+    background-color: #ffd700;
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
 /* Section des Formations */
