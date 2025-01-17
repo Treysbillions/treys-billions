@@ -187,11 +187,27 @@ header {
 }
 /* Section d'accueil */
 #accueil {
-    text-align: center;
-    padding: 40px 20px;
+    margin-top: 0;
+    padding: 100px 20px; /* Ajuster le padding pour créer de l'espace */
     background-color: #f5f5dc;
+    text-align: center;
     width: 100%;
-    margin-top: 0; /* Supprimez l'espace */
+    height: 100vh; /* Occupe toute la hauteur de la fenêtre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#accueil h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#accueil p {
+    font-size: 1.2rem;
+    color: #555;
 }
 
 /* Titres et autres éléments */
@@ -401,7 +417,7 @@ nav {
     top: 0; /* Coller au sommet de la page */
     left: 0;
     width: 100%;
-    background-color: #333;  /* Fond opaque (non transparent) */
+    background-color: #d3d3d3; /* Couleur de fond */
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -467,7 +483,7 @@ nav a.active {
     text-align: center;
     padding: 40px 20px;
     background-color: #f5f5dc;
-    width: 60%;
+    width: 10%;
     display: block; /* Forcer l'affichage en bloc */
 }
 
