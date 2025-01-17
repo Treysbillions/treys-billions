@@ -1,10 +1,11 @@
-<cd chemin/vers/votre-projet
+<!--
+cd chemin/vers/votre-projet
 git init
-git add.
+git add .
 git commit -m "Initial commit"
 git remote add origin https://github.com/Treysbillions/treys-billions.git
-git push -u origin master></cd>
->
+git push -u origin master
+-->
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -15,15 +16,17 @@ git push -u origin master></cd>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <!-- Section Header -->
-<header>
-    <video src="videos/video.mp4" autoplay loop muted></video>
-    <div class="overlay">
-        <h1>Treys Billions</h1>
-        <p>Transformez votre avenir professionnel dès aujourd'hui</p>
-        <p>Découvrez nos formations</p>
-    </div>
-</header>
+    <header>
+        <video src="videos/video.mp4" autoplay loop muted></video>
+        <div class="overlay">
+            <h1>Treys Billions</h1>
+            <p>Transformez votre avenir professionnel dès aujourd'hui</p>
+            <p>Découvrez nos formations</p>
+        </div>
+    </header>
 
     <!-- Navigation -->
     <nav>
@@ -41,11 +44,11 @@ git push -u origin master></cd>
     <!-- Présentation -->
     <section id="presentation">
         <div class="container">
-            </div>
+            <img src="images/accueil.jpg" alt="Photo accueil" class="accueil-img">
         </div>
     </section>
-   
-    <!--Accueil-->
+
+    <!-- Accueil -->
     <div id="accueil" class="container" style="text-align: center; padding: 40px 20px; background-color: #f5f5dc; color: #000000;">
         <h2>Bienvenue sur le site de formations de TREYS BILLIONS</h2>
         <h2 style="color: #000000; font-size: 36px; margin-bottom: 20px;">Votre destination pour des formations en ligne de qualité</h2>
@@ -54,7 +57,7 @@ git push -u origin master></cd>
             Notre plateforme de formation en ligne est conçue pour vous accompagner dans votre quête de développement personnel et professionnel, 
             en mettant à votre disposition des programmes adaptés à vos besoins.
         </p>
-    
+
         <h3 style="color: #ffd700; font-size: 28px; margin-top: 40px;">Pourquoi choisir le site de formation de TREYS BILLIONS?</h3>
         <ul style="list-style: none; padding: 0; font-size: 18px; line-height: 1.8; text-align: left; max-width: 800px; margin: 0 auto;">
             <li><strong>✔ Des formations certifiées et reconnues</strong> : Tous nos programmes sont élaborés par des experts dans leurs domaines, pour garantir une expérience d’apprentissage enrichissante et valorisée.</li>
@@ -62,20 +65,6 @@ git push -u origin master></cd>
             <li><strong>✔ Une variété de sujets</strong> : Que vous souhaitiez acquérir de nouvelles compétences, vous reconvertir ou approfondir vos connaissances, nous proposons des parcours variés couvrant de nombreux secteurs.</li>
             <li><strong>✔ Support personnalisé</strong> : Notre équipe est disponible pour vous accompagner tout au long de votre parcours.</li>
         </ul> 
-        <html lang="fr">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Page d'Accueil</title>
-    
-                    
-                <section id="presentation">
-                    <div class="container">
-                        <img src="images/accueil.jpg" alt="Photo accueil" class="accueil-img">
-                    </div>
-                </section>
-            </body>
-            </html>
 
         <h3 style="color: #ffd700; font-size: 28px; margin-top: 40px;">Notre engagement : votre réussite</h3>
         <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
@@ -91,7 +80,7 @@ git push -u origin master></cd>
         </a>
     </div>
     
-         <!-- Formations -->
+    <!-- Formations -->
     <section id="formations">
         <div class="container">
             <h2>Nos Formations</h2>
@@ -101,13 +90,6 @@ git push -u origin master></cd>
                     <h2>Packaging Argent</h2>
                     <p><strong>Prix : 500€</strong></p>
                     <p>Accédez aux bases essentielles pour démarrer et acquérir les compétences fondamentales nécessaires pour progresser dans votre domaine.</p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
                     <p><strong>Payer par carte bancaire.</strong></p>
                     <form action="https://www.paypal.com" method="post">
                         <button onclick="window.location.href='https://www.paypal.com/paypalme/bohicosloane05/500';">Commander</button>
@@ -117,12 +99,6 @@ git push -u origin master></cd>
                     <h2>Packaging Gold</h2>
                     <p><strong>Prix : 5 000€</strong></p>
                     <p>Approfondissez vos connaissances et devenez un expert. Ce programme est conçu pour vous guider dans des stratégies avancées..</p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
                     <p><strong>Payer par carte ou virement bancaire.</strong></p>
                     <form action="https://www.paypal.com" method="post">
                         <button onclick="window.location.href='https://www.paypal.com/paypalme/bohicosloane05/5000';">Commander</button>
@@ -140,24 +116,25 @@ git push -u origin master></cd>
         </div>
     </section>
 
-     <!-- Créateur -->
-     <section id="createur">
+    <!-- Créateur -->
+    <section id="createur">
         <div class="container">
             <h2>Découvrez le Créateur</h2>
             <p>
                 Le créateur de Treys Billions est un passionné d'investissement et de développement personnel. Avec une vision claire de l'éducation en ligne et du partage de connaissances, il a conçu cette plateforme pour aider ceux qui souhaitent exceller dans leurs carrières.
-               </p> 
-               <h2>N</h2>
-                <div class="diaporama-container">
-                    <div class="diaporama-slides">
-                        <div class="diaporama-slide"><img src="creator1.jpg" alt="Créateur 1"></div>
-                        <div class="diaporama-slide"><img src="creator2.jpg" alt="Créateur 2"></div>
-                        <div class="diaporama-slide"><img src="creator3.jpg" alt="Créateur 3"></div>
-                    </div>
-                    <button class="prev">&#10094;</button>
-                    <button class="next">&#10095;</button>
-    
-    
+            </p> 
+            <div class="diaporama-container">
+                <div class="diaporama-slides">
+                    <div class="diaporama-slide"><img src="creator1.jpg" alt="Créateur 1"></div>
+                    <div class="diaporama-slide"><img src="creator2.jpg" alt="Créateur 2"></div>
+                    <div class="diaporama-slide"><img src="creator3.jpg" alt="Créateur 3"></div>
+                </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
     <!-- Témoignages -->
     <section id="temoignages">
         <div class="container">
@@ -178,48 +155,44 @@ git push -u origin master></cd>
         </div>
     </section>
 
-  <!-- Section Statistiques -->
-<div id="statistiques">
-    <div class="statistique-card">
-        <h3><span class="counter" data-target="254">0</span></h3>
-        <p>Personnes formées</p>
+    <!-- Statistiques -->
+    <div id="statistiques">
+        <div class="statistique-card">
+            <h3><span class="counter" data-target="254">0</span></h3>
+            <p>Personnes formées</p>
+        </div>
+        <div class="statistique-card">
+            <h3><span class="counter" data-target="3">0</span></h3>
+            <p>Formations disponibles</p>
+        </div>
+        <div class="statistique-card">
+            <h3><span class="counter" data-target="100">0</span>%</h3>
+            <p>Satisfaction client</p>
+        </div>
     </div>
-    <div class="statistique-card">
-        <h3><span class="counter" data-target="3">0</span></h3>
-        <p>Formations disponibles</p>
-    </div>
-    <div class="statistique-card">
-        <h3><span class="counter" data-target="100">0</span>%</h3>
-        <p>Satisfaction client</p>
-    </div>
-</div>
-<script>
-    // Fonction pour animer le compteur
-    document.addEventListener("DOMContentLoaded", function() {
-        const counters = document.querySelectorAll('.counter');
-    
-        // Fonction pour chaque compteur
-        counters.forEach(counter => {
-            const updateCount = () => {
-                const target = +counter.getAttribute('data-target');
-                const current = +counter.innerText;
-    
-                // Si le compteur n'a pas atteint sa valeur cible
-                if (current < target) {
-                    const increment = target / 100; // L'incrément de chaque pas
-                    counter.innerText = Math.ceil(current + increment); // Mise à jour du texte
-                    setTimeout(updateCount, 50); // Rappel de la fonction après un délai
-                } else {
-                    counter.innerText = target; // Lorsque le compteur atteint sa cible
-                }
-            };
-    
-            // Démarrer l'animation
-            updateCount();
+
+    <script>
+        // Fonction pour animer le compteur
+        document.addEventListener("DOMContentLoaded", function() {
+            const counters = document.querySelectorAll('.counter');
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const current = +counter.innerText;
+
+                    if (current < target) {
+                        const increment = target / 100;
+                        counter.innerText = Math.ceil(current + increment);
+                        setTimeout(updateCount, 50);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
         });
-    });
     </script>
-    
 
     <!-- Contact -->
     <section id="contact">
@@ -245,11 +218,4 @@ git push -u origin master></cd>
     <!-- Pied de page -->
     <footer>
         <p>&copy; 2024 Treys Billions. Tous droits réservés.</p>
-    </footer>
-</body>
-
-</html>
-
-
-
-
+   

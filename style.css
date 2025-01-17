@@ -136,6 +136,65 @@ header .overlay p {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
+/* Section des Formations */
+.formations {
+    padding: 50px 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+/* Carte de formation */
+.formation-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.formation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.formation-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.formation-card h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.formation-card p {
+    font-size: 1rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 768px) {
+    .formations {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formation-card {
+        width: 90%;  /* Les cartes occupent une plus grande largeur sur les petits écrans */
+    }
+}
 
 /* Section Créateurs */
 #createur {
