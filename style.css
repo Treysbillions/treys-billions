@@ -269,7 +269,7 @@ ul.list {
 
 /* Diaporama - chaque image */
 .diaporama-slide {
-    width: 40%; /* Ajustez cette valeur pour une taille plus petite ou plus grande */
+    width: 80%; /* Ajustez cette valeur pour une taille plus petite ou plus grande */
     display: block;
     object-fit: cover; /* Garder l'image intacte en remplissant le conteneur */
     margin: 0 auto; /* Centrer l'image horizontalement */
@@ -278,8 +278,8 @@ ul.list {
 /* Container du diaporama */
 .diaporama {
     position: relative;
-    width: 40%; /* Réduire la largeur du conteneur pour qu'il soit plus petit */
-    max-width: 200px; /* Limiter la largeur maximale */
+    width: 80%; /* Réduire la largeur du conteneur pour qu'il soit plus petit */
+    max-width: 500px; /* Limiter la largeur maximale */
     margin: 50px auto;
     overflow: hidden;
     border-radius: 10px;
