@@ -357,6 +357,44 @@
                         margin: 0 auto; /* Centre l'image horizontalement */
                         display: block; /* Assure que l'image est un élément de bloc pour le centrage */
                     }
+                    /* Styles par défaut pour les ordinateurs (large écran) */
+body {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Tablettes (largeur entre 768px et 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    nav {
+        flex-wrap: wrap;
+    }
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Smartphones (moins de 768px) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .container {
+        padding: 5px;
+    }
+    .formation {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
                 </style>
             </head>
             <body
