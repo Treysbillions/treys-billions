@@ -497,10 +497,10 @@ body {
                     <p><strong>Payer par carte bancaire.</strong></p>
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                         <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="ascompacte10@gmail.com" value="ascompacte10@gmail.com">
-                        <input type="hidden" name="Packaging Argent" value="Nom du produit ou service">
-                        <input type="hidden" name="500.00" value="Prix">
-                        <input type="hidden" name="EUR" value="EUR">
+                        <input type="hidden" name="business" value="ascompacte10@gmail.com"> <!-- Remplacez par votre email PayPal -->
+                        <input type="hidden" name="item_name" value="Packaging Argent"> <!-- Nom du produit -->
+                        <input type="hidden" name="amount" value="500.00"> <!-- Montant (à modifier selon vos produits) -->
+                        <input type="hidden" name="currency_code" value="EUR"> <!-- Devise : EUR, USD, etc. -->                
                         <input type="submit" value="Commander" style="padding: 10px 20px; background-color: #c69c6d; color: white; border: none; cursor: pointer;">
                       </form>
                       
