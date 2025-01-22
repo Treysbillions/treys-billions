@@ -495,9 +495,15 @@ body {
                     <p></p>
                     <p></p>
                     <p><strong>Payer par carte bancaire.</strong></p>
-                    <form action="https://www.paypal.com" method="post">
-                        <button onclick="window.location.href='https://www.paypal.com/paypalme/bohicosloane05/500';">Commander</button>
-                    </form>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="bohicosloane05@gmail.com" value="bohicosloane05@gmail.com">
+                        <input type="hidden" name="Packaging Argent" value="Nom du produit ou service">
+                        <input type="hidden" name="500" value="Prix">
+                        <input type="hidden" name="EUR" value="EUR">
+                        <input type="submit" value="Acheter maintenant" style="padding: 10px 20px; background-color: #0070ba; color: white; border: none; cursor: pointer;">
+                      </form>
+                      
                 </div>
                 <div class="formation-card">
                     <h2>Packaging Gold</h2>
