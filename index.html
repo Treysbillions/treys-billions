@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treys Billions - Formations Professionnelles</title>
     <style>
-         body {
+        body {
             font-family: 'Times New Roman', serif;
             margin: 0;
             padding: 0;
@@ -39,9 +40,31 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+        #accueil {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f5f5dc;
+        }
+        #accueil h2 {
+            color: #000000;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        #accueil ul {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        #accueil ul li {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
         #accueil img {
             max-width: 60%;
-            margin: 0 auto;
+            margin: 20px auto;
             display: block;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -71,47 +94,34 @@
             background-color: #000000;
             color: #ffd700;
         }
-        .stat {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
-        }
-        .stat div {
-            border: 2px solid #000000;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #f0f0f0;
-            text-align: center;
-        }
-        .stat div h3 {
-            color: #ffd700;
-        }
         #createur {
             text-align: center;
+            padding: 20px;
         }
-        #createur .slideshow-container {
+        #createur img {
+            width: 100%;
             max-width: 300px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
             border-radius: 10px;
+            margin: 10px auto;
         }
-        #createur .slideshow-container img {
+        .slideshow-container {
+            position: relative;
+            max-width: 300px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .slideshow-container img {
+            display: none;
             width: 100%;
             height: auto;
-            display: none;
         }
-        #createur .slideshow-container img.active {
+        .slideshow-container img.active {
             display: block;
         }
-        @keyframes fade {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         #contact input, #contact select, #contact textarea {
             width: 80%;
@@ -134,23 +144,34 @@
             text-align: center;
             padding: 20px;
         }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 10px;
+            }
+            nav a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+            #accueil h2 {
+                font-size: 28px;
+            }
+            .formation {
+                max-width: 90%;
+                padding: 15px;
+            }
+            #contact input, #contact select, #contact textarea {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
-
     <header>
         <h1>Bienvenue sur le site de formations de Treys Billions</h1>
         <p>Votre Passerelle Vers Le Succès Professionnel</p>
     </header>
-
-    <section id="video-presentation" class="hero-section">
-        <div class="video-container" style="position: relative; text-align: center;">
-            <video autoplay controls loop id="introVideo" style="width: 100%; height: auto; max-height: 600px;">
-                <source src="videos/video.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas les vidéos HTML5. Veuillez utiliser un navigateur moderne.
-            </video>
-        </div>
-    </section>
 
     <nav>
         <a href="#accueil">Accueil</a>
@@ -161,35 +182,20 @@
         <a href="#contact">Contact</a>
     </nav>
 
-     <!--Accueil-->
-     <div id="accueil" class="container" style="text-align: center; padding: 40px 20px; background-color: #f5f5dc; color: #000000;">
-        <h2>Bienvenue sur le site de formations de TREYS BILLIONS</h2>
-        <h2 style="color: #000000; font-size: 36px; margin-bottom: 20px;">Votre destination pour des formations en ligne de qualité</h2>
-        <p style="font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
+    <section id="accueil" class="container">
+        <h2>Votre destination pour des formations en ligne de qualité</h2>
+        <p>
             Sur ce site, nous croyons au pouvoir de la connaissance pour transformer des vies. 
-            Notre plateforme de formation en ligne est conçue pour vous accompagner dans votre quête de développement personnel et professionnel, 
-            en mettant à votre disposition des programmes adaptés à vos besoins.
+            Notre plateforme de formation en ligne est conçue pour vous accompagner dans votre quête de développement personnel et professionnel.
         </p>
-    
-        <h3 style="color: #ffd700; font-size: 28px; margin-top: 40px;">Pourquoi choisir le site de formation de TREYS BILLIONS?</h3>
-        <ul style="list-style: none; padding: 0; font-size: 18px; line-height: 1.8; text-align: left; max-width: 800px; margin: 0 auto;">
-            <li><strong>✔ Des formations certifiées et reconnues</strong> : Tous nos programmes sont élaborés par des experts dans leurs domaines, pour garantir une expérience d’apprentissage enrichissante et valorisée.</li>
-            <li><strong>✔ Accessibilité 24/7</strong> : Apprenez à votre rythme, où que vous soyez, grâce à notre plateforme intuitive et facile d’utilisation.</li>
-            <li><strong>✔ Une variété de sujets</strong> : Que vous souhaitiez acquérir de nouvelles compétences, vous reconvertir ou approfondir vos connaissances, nous proposons des parcours variés couvrant de nombreux secteurs.</li>
-            <li><strong>✔ Support personnalisé</strong> : Notre équipe est disponible pour vous accompagner tout au long de votre parcours.</li>
-        </ul> 
-        <html lang="fr">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Page d'Accueil</title>
-    
-                    
-                <section id="presentation">
-                    <div class="container">
-                        <img src="images/accueil.jpg" alt="Photo accueil" class="accueil-img">
-                    </div>
-                </section>
+        <ul>
+            <li><strong>✔ Des formations certifiées et reconnues</strong></li>
+            <li><strong>✔ Accessibilité 24/7</strong></li>
+            <li><strong>✔ Une variété de sujets</strong></li>
+            <li><strong>✔ Support personnalisé</strong></li>
+        </ul>
+        <img src="images/accueil.jpg" alt="Photo accueil">
+    </section>
             </body>
             </html>
 
