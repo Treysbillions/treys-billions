@@ -495,16 +495,20 @@ body {
                     <p></p>
                     <p></p>
                     <p><strong>Payer par carte bancaire.</strong></p>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                        <!-- Configuration PayPal -->
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <!-- Type de commande -->
                         <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="business" value="ascompacte10@gmail.com"> <!-- Identifiant du profil vendeur -->
-                        <input type="hidden" name="item_name" value="Packaging Argent"> <!-- Nom du produit -->
-                        <input type="hidden" name="amount" value="500.00"> <!-- Montant (ajustez selon vos besoins) -->
-                        <input type="hidden" name="currency_code" value="EUR"> <!-- Devise : USD, EUR, etc. -->
                         
-                        <!-- Bouton de paiement -->
-                        <input type="submit" value="Payer avec PayPal" style="padding: 10px 20px; background-color: #0070BA; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                        <!-- Adresse e-mail de votre compte PayPal -->
+                        <input type="hidden" name="business" value="ascompacte10@gmail.com">
+                        
+                        <!-- Détails du produit -->
+                        <input type="hidden" name="item_name" value="Packaging Argent"> <!-- Nom du produit -->
+                        <input type="hidden" name="amount" value="500.00"> <!-- Montant -->
+                        <input type="hidden" name="currency_code" value="EUR"> <!-- Devise -->
+                
+                        <!-- Bouton de soumission -->
+                        <input type="submit" value="Commander" style="padding: 10px 20px; background-color: #c69c6d; color: white; border: none; border-radius: 5px; cursor: pointer;">
                     </form>
                       
                 </div>
