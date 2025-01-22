@@ -5,45 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treys Billions - Formations Professionnelles</title>
     <style>
-        body {
+         body {
             font-family: 'Times New Roman', serif;
             margin: 0;
             padding: 0;
-            background-color: #FFF8E1; /* Fond couleur crème */
+            background-color: #FFF8E1;
             color: #000000;
-            text-align: center; /* Centre le texte par défaut pour le body */
         }
         header {
             background-color: #000000;
             color: #ffffff;
             padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 2s ease-in;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
         nav {
             display: flex;
             justify-content: center;
             background-color: #333333;
             padding: 15px 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            animation: slideIn 1s ease-out;
-        }
-        @keyframes slideIn {
-            from {
-                transform: translateY(-100%);
-            }
-            to {
-                transform: translateY(0);
-            }
         }
         nav a {
             color: #ffffff;
@@ -56,9 +35,16 @@
             color: #ffd700;
         }
         .container {
-            padding: 40px 20px;
+            padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
+        }
+        #accueil img {
+            max-width: 60%;
+            margin: 0 auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         .formation {
             border: 2px solid #000000;
@@ -66,132 +52,87 @@
             padding: 20px;
             max-width: 600px;
             text-align: center;
-            transition: transform 0.3s ease;
-            animation: fadeInUp 1s ease-out;
-            background-color: #f0f0f0; /* Fond gris pour chaque case de formation */
-        }
-        @keyframes fadeInUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        .formation:hover {
-            transform: scale(1.05);
+            background-color: #f0f0f0;
+            border-radius: 10px;
         }
         .formation h2 {
             color: #ffd700;
-            font-size: 26px;
-        }
-        .formation p {
-            font-size: 18px;
         }
         .formation button {
-            background-color: #000000;
-            color: #ffffff;
-            border: none;
-            padding: 15px 30px;
-            font-size: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .formation button:hover {
             background-color: #ffd700;
             color: #000000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
         }
-        .testimonial {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin: 20px auto;
-            max-width: 600px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .testimonial p {
-            font-style: italic;
-        }
-        footer {
-            text-align: center;
-            padding: 30px 20px;
+        .formation button:hover {
             background-color: #000000;
-            color: #ffffff;
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 2s ease-in;
-        }
-        #accueil img, .stat img, .testimonial img, #createur img {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-        #accueil img:hover, .stat img:hover, .testimonial img:hover, #createur img:hover {
-            transform: scale(1.05);
+            color: #ffd700;
         }
         .stat {
             display: flex;
-            justify-content: space-evenly; /* Sépare les éléments sur la même ligne */
-            padding: 40px 0;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
         }
         .stat div {
+            border: 2px solid #000000;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f0f0f0;
             text-align: center;
         }
         .stat div h3 {
             color: #ffd700;
-            font-size: 36px;
-            font-weight: bold;
         }
-        #createur .createur-photos {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            overflow: hidden;
-            max-width: 900px;
+        #createur {
+            text-align: center;
+        }
+        #createur .slideshow-container {
+            max-width: 300px;
             margin: 0 auto;
+            position: relative;
+            overflow: hidden;
             border-radius: 10px;
         }
-        #createur .createur-photos img {
-            width: auto;
-            height: 300px;
-            border-radius: 10px;
-            animation: slide 10s infinite;
-        }
-        @keyframes slide {
-            0% {
-                transform: translateX(0);
-            }
-            33% {
-                transform: translateX(-100%);
-            }
-            66% {
-                transform: translateX(-200%);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
-        .contact-form input, .contact-form select, .contact-form textarea {
+        #createur .slideshow-container img {
             width: 100%;
+            height: auto;
+            display: none;
+        }
+        #createur .slideshow-container img.active {
+            display: block;
+        }
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        #contact input, #contact select, #contact textarea {
+            width: 80%;
             padding: 10px;
             margin: 10px 0;
-            border-radius: 5px;
             border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        .contact-form button {
+        #contact button {
             background-color: #000000;
             color: #ffffff;
             border: none;
-            padding: 15px 30px;
+            padding: 10px 20px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            border-radius: 5px;
         }
-        .contact-form button:hover {
-            background-color: #ffd700;
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
         }
     </style>
 </head>
@@ -336,57 +277,14 @@
     </div>
 </div>
 
-<!-- Points indicateurs -->
-<div class="dots">
-    <span class="dot" onclick="setSlide(0)"></span>
-    <span class="dot" onclick="setSlide(1)"></span>
-    <span class="dot" onclick="setSlide(2)"></span>
-</div>
-</div>
-
 <script>
-let currentIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
-const dots = document.querySelectorAll('.dot');
-let slideInterval;
-
-// Fonction pour mettre à jour l'affichage des slides
-function updateSlidesPosition() {
-    const newTransformValue = -currentIndex * 100;
-    const slidesContainer = document.querySelector('.slideshow');
-    slidesContainer.style.transform = `translateX(${newTransformValue}%)`;
-
-    // Mettre à jour les indicateurs
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
-    });
-}
-
-// Fonction pour passer à la slide suivante automatiquement
-function autoSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateSlidesPosition();
-}
-
-// Fonction pour naviguer manuellement vers une slide
-function setSlide(index) {
-    currentIndex = index;
-    updateSlidesPosition();
-    restartAutoSlide(); // Relancer le timer automatique après une interaction
-}
-
-// Redémarrer le diaporama après interaction
-function restartAutoSlide() {
-    clearInterval(slideInterval);
-    slideInterval = setInterval(autoSlide, 3000); // Changement toutes les 3 secondes
-}
-
-// Initialisation du diaporama
-window.onload = () => {
-    updateSlidesPosition(); // Assurer l'affichage correct initial
-    slideInterval = setInterval(autoSlide, 3000); // Lancement automatique
-};
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slideshow-container img");
+    setInterval(() => {
+        slides[slideIndex].classList.remove("active");
+        slideIndex = (slideIndex + 1) % slides.length;
+        slides[slideIndex].classList.add("active");
+    }, 3000);
 </script>
 
 <!--Statistiques-->
@@ -394,15 +292,15 @@ window.onload = () => {
     <div class="container">
         <h2>Statistiques</h2>
         <div class="statistics">
-            <div class="stat">
-                 <h3 id="counter">254</h3>
+            <div>
+                <h3>254</h3>
                 <p>Personnes formées</p>
             </div>
-            <div class="stat">
+            <div>
                 <h3>3</h3>
                 <p>Formations disponibles</p>
             </div>
-            <div class="stat">
+            <div>
                 <h3>100%</h3>
                 <p>Satisfaction client</p>
             </div>
